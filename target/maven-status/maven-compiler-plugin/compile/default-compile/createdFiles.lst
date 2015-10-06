@@ -1,0 +1,10 @@
+net/cloudcentrik/hbs/PersonService.class
+net/cloudcentrik/hbs/Person.class
+net/cloudcentrik/hbs/UserDAO.class
+net/cloudcentrik/hbs/HBSServerConfig.class
+net/cloudcentrik/hbs/User.class
+net/cloudcentrik/hbs/HBSServerApp.class
+net/cloudcentrik/hbs/PersonDB.class
+net/cloudcentrik/hbs/HBSServerCheck.class
+net/cloudcentrik/hbs/UserMapper.class
+net/cloudcentrik/hbs/UserResource.class

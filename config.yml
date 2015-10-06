@@ -8,3 +8,10 @@ server:
   adminConnectors:
   - type: http
     port: 9001
+
+
+database:  
+  driverClass : com.mysql.jdbc.Driver
+  user        : hbs_admin
+  password    : open123
+  url         : jdbc:mysql://localhost:3306/hbs
