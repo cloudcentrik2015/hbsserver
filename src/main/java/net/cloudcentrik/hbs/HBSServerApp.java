@@ -23,6 +23,9 @@ public class HBSServerApp extends Application<HBSServerConfig> {
         final DBI jdbi = factory.build(env, config.getDataSourceFactory(), "mysql");
         final UserDAO dao = jdbi.onDemand(UserDAO.class);
         env.jersey().register(new UserResource(dao));
+        
+        final HBSService hbsService=new HBSService();
+        env.jersey().register(hbsService);
  
         final HBSServerCheck healthCheck = new HBSServerCheck(config.getVersion());
         env.healthChecks().register("template", healthCheck);

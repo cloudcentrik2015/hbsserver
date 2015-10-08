@@ -8,7 +8,8 @@ import java.sql.SQLException;
 public class UserMapper implements ResultSetMapper<User> {
 
 	public User map(int index, ResultSet resultSet, StatementContext statementContext) throws SQLException {
-		return new User().setId(resultSet.getInt("U_id")).setName(resultSet.getString("Name"));
+		return new User().setId(resultSet.getInt("U_id")).setName(resultSet.getString("Name")).setEmail(resultSet.getString("Email")).setMobil(resultSet.getString("Phone"));
 	}
+	
 
 }

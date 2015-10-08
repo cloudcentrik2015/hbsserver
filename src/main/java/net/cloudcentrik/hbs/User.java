@@ -44,16 +44,18 @@ public class User {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public User setEmail(String email) {
 		this.email = email;
+		return this;
 	}
 
 	public String getMobil() {
 		return mobil;
 	}
 
-	public void setMobil(String mobil) {
+	public User setMobil(String mobil) {
 		this.mobil = mobil;
+		return this;
 	}
 
 	public User() {
