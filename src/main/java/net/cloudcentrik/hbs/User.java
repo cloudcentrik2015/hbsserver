@@ -20,7 +20,7 @@ public class User {
 
 	@NotNull
 	@JsonProperty
-	private String mobil;
+	private String phone;
 
 	public Integer getId() {
 		return id;
@@ -49,23 +49,23 @@ public class User {
 		return this;
 	}
 
-	public String getMobil() {
-		return mobil;
+	public String getPhone() {
+		return phone;
 	}
 
-	public User setMobil(String mobil) {
-		this.mobil = mobil;
+	public User setMobil(String phone) {
+		this.phone = phone;
 		return this;
 	}
 
 	public User() {
 	}
 
-	public User(int id, String name, String email, String mobile) {
+	public User(int id, String name, String email, String phone) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.mobil = mobile;
+		this.phone = phone;
 	}
 
 	@Override
@@ -78,6 +78,10 @@ public class User {
 		if (!getId().equals(that.getId()))
 			return false;
 		if (!getName().equals(that.getName()))
+			return false;
+		if (!getEmail().equals(that.getEmail()))
+			return false;
+		if (!getPhone().equals(that.getPhone()))
 			return false;
 		return true;
 	}

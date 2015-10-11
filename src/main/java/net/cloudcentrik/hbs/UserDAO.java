@@ -15,9 +15,9 @@ interface UserDAO {
 	User findById(@Bind("id") int id);
 	@SqlUpdate("delete from Users where U_id = :id")
 	int deleteById(@Bind("id") int id);
-	@SqlUpdate("update into Users set Name = :name where U_id = :id")
+	@SqlUpdate("update Users set Name = :name, Email = :email, Phone = :phone where U_id = :id")
 	int update(@BindBean User user);
-	@SqlUpdate("insert into Users (U_Id, Name) values (:id, :name)")
+	@SqlUpdate("insert into Users (U_Id, Name, Email, Phone) values (:id, :name, :email, :phone)")
 	int insert(@BindBean User user);
 
 }

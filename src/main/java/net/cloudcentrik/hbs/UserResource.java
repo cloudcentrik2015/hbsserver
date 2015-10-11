@@ -49,8 +49,9 @@ public class UserResource {
 
 	@DELETE
 	@Path("/{id}")
-	public void delete(@PathParam("id") Integer id) {
+	public int delete(@PathParam("id") Integer id) {
 		userDAO.deleteById(id);
+		return id;
 	}
 
 }
