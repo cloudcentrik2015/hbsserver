@@ -6,13 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
 
-	@NotNull
 	@JsonProperty
 	private Integer id;
 
 	@NotNull
 	@JsonProperty
-	private String name;
+	private String userName;
+
+	@NotNull
+	@JsonProperty
+	private String passward;
 
 	@NotNull
 	@JsonProperty
@@ -20,7 +23,15 @@ public class User {
 
 	@NotNull
 	@JsonProperty
-	private String phone;
+	private String type;
+
+	@NotNull
+	@JsonProperty
+	private String firstName;
+
+	@NotNull
+	@JsonProperty
+	private String lastName;
 
 	public Integer getId() {
 		return id;
@@ -31,13 +42,20 @@ public class User {
 		return this;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public User setName(String name) {
-		this.name = name;
-		return this;
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassward() {
+		return passward;
+	}
+
+	public void setPassward(String passward) {
+		this.passward = passward;
 	}
 
 	public String getEmail() {
@@ -49,41 +67,41 @@ public class User {
 		return this;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getType() {
+		return type;
 	}
 
-	public User setMobil(String phone) {
-		this.phone = phone;
-		return this;
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public User() {
 	}
 
-	public User(int id, String name, String email, String phone) {
+	public User(int id, String userName, String passward, String email,
+			String type, String firstName, String lastName) {
 		this.id = id;
-		this.name = name;
+		this.userName = userName;
+		this.passward = passward;
 		this.email = email;
-		this.phone = phone;
+		this.type = type;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof User))
-			return false;
-		User that = (User) o;
-		if (!getId().equals(that.getId()))
-			return false;
-		if (!getName().equals(that.getName()))
-			return false;
-		if (!getEmail().equals(that.getEmail()))
-			return false;
-		if (!getPhone().equals(that.getPhone()))
-			return false;
-		return true;
-	}
-
 }

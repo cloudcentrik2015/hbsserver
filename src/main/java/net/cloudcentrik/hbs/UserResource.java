@@ -29,6 +29,7 @@ public class UserResource {
 
 	@GET
 	@Path("/{id}")
+	 @Produces(MediaType.APPLICATION_JSON)
 	public User get(@PathParam("id") Integer id) {
 		return userDAO.findById(id);
 	}
