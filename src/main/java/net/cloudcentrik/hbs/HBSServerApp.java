@@ -24,6 +24,9 @@ public class HBSServerApp extends Application<HBSServerConfig> {
         final UserDAO dao = jdbi.onDemand(UserDAO.class);
         env.jersey().register(new UserResource(dao));
         
+        final CustomerDAO customerDao = jdbi.onDemand(CustomerDAO.class);
+        env.jersey().register(new CustomerResource(customerDao));
+        
         final HBSService hbsService=new HBSService();
         env.jersey().register(hbsService);
  
