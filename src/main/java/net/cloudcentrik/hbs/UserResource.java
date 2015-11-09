@@ -20,38 +20,53 @@ public class UserResource {
 	}
 
 	@GET
-    @Timed
-    @Path("/all")
-    @Produces(MediaType.APPLICATION_JSON)
+	@Timed
+	@Path("/all")
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAll() {
 		return userDAO.getAll();
 	}
 
 	@GET
-	@Path("/{id}")
-	 @Produces(MediaType.APPLICATION_JSON)
-	public User get(@PathParam("id") Integer id) {
-		return userDAO.findById(id);
+	@Path("/{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User get(@PathParam("email") String email) {
+		User u=userDAO.findByEmail(email);
+		//return userDAO.findByEmail(email);
+		if(u==null){
+			return new User();
+		}else{
+			return u;
+		}
+			
 	}
 
 	@POST
 	public User add(@Valid User user) {
-		int newId = userDAO.insert(user);
-		return user.setId(newId);
+		int id = userDAO.insert(user);
+		if (id > 0) {
+			return userDAO.findByEmail(user.getUserEmail());
+		} else {
+			return new User();
+		}
 	}
 
 	@PUT
-	@Path("/{id}")
-	public User update(@PathParam("id") Integer id, @Valid User user) {
-		user = user.setId(id);
-		userDAO.update(user);
-		return user;
+	@Path("/{email}")
+	public User update(@PathParam("userEmail") String email, @Valid User user) {
+		user.setUserEmail(email);
+		int id=userDAO.update(user);
+		if (id > 0) {
+			return userDAO.findByEmail(user.getUserEmail());
+		} else {
+			return new User();
+		}
 	}
 
 	@DELETE
-	@Path("/{id}")
-	public int delete(@PathParam("id") Integer id) {
-		userDAO.deleteById(id);
+	@Path("/{email}")
+	public int delete(@PathParam("email") String email) {
+		int id=userDAO.deleteByEmail(email);
 		return id;
 	}
 

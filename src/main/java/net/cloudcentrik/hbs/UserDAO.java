@@ -13,16 +13,16 @@ interface UserDAO {
 	@SqlQuery("select * from hbs_user")
 	List<User> getAll();
 
-	@SqlQuery("select * from hbs_user where user_id = :id")
-	User findById(@Bind("id") int id);
+	@SqlQuery("select * from hbs_user where user_email = :email")
+	User findByEmail(@Bind("email") String email);
 
-	@SqlUpdate("delete from hbs_user where user_id = :id")
-	int deleteById(@Bind("id") int id);
+	@SqlUpdate("delete from hbs_user where user_email = :email")
+	int deleteByEmail(@Bind("userEmail") String email);
 
-	@SqlUpdate("update hbs_user set user_name = :userName, passward = :passward, user_email = :email, user_type = :type, user_first_name = :firstName , user_last_name = :lastName where U_id = :id")
+	@SqlUpdate("update hbs_user set user_name = :userName, user_password = :userPassword, user_type = :userType where user_email = :userEmail")
 	int update(@BindBean User user);
 
-	@SqlUpdate("insert into hbs_user (user_name, passward, user_email, user_type, user_first_name, user_last_name) values (:userName, :passward, :email, :type, :firstName, :lastName)")
+	@SqlUpdate("insert into hbs_user (user_name, user_password, user_email, user_type) values (:userName, :userPassword, :userEmail, :userType)")
 	int insert(@BindBean User user);
 
 }

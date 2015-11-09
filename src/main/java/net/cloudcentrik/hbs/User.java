@@ -6,41 +6,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
 
-	@JsonProperty
-	private Integer id;
-
 	@NotNull
 	@JsonProperty
 	private String userName;
 
 	@NotNull
 	@JsonProperty
-	private String passward;
+	private String userPassword;
 
 	@NotNull
 	@JsonProperty
-	private String email;
+	private String userEmail;
 
 	@NotNull
 	@JsonProperty
-	private String type;
-
-	@NotNull
-	@JsonProperty
-	private String firstName;
-
-	@NotNull
-	@JsonProperty
-	private String lastName;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public User setId(Integer id) {
-		this.id = id;
-		return this;
-	}
+	private String userType;
 
 	public String getUserName() {
 		return userName;
@@ -50,58 +30,42 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getPassward() {
-		return passward;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassward(String passward) {
-		this.passward = passward;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public User setEmail(String email) {
-		this.email = email;
-		return this;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
-	public String getType() {
-		return type;
+	public String getUserType() {
+		return userType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public User(String userName, String userPassword, String userEmail,
+			String userType) {
+		super();
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.userEmail = userEmail;
+		this.userType = userType;
 	}
 
 	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String userName, String passward, String email,
-			String type, String firstName, String lastName) {
-		this.id = id;
-		this.userName = userName;
-		this.passward = passward;
-		this.email = email;
-		this.type = type;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 }
