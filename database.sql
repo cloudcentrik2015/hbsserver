@@ -1,3 +1,10 @@
+/* create user */
+CREATE USER 'hbs_admin'@'localhost' IDENTIFIED BY 'open123';
+CREATE USER 'hbs_admin'@'%' IDENTIFIED BY 'open123';
+GRANT ALL ON hbs.* TO 'hbs_admin'@'localhost';
+GRANT ALL ON hbs.* TO 'hbs_admin'@'%';
+FLUSH PRIVILEGES;
+
 /*create database */
 CREATE DATABASE hbs;
 USE hbs;
