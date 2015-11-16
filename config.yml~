@@ -12,6 +12,6 @@ server:
 
 database:  
   driverClass : com.mysql.jdbc.Driver
-  user        : hbs_admin
-  password    : open123
-  url         : jdbc:mysql:
+  user        : root
+  password    : open_123/
+  url         : jdbc:mysql://50.56.218.130:3306/hbs
