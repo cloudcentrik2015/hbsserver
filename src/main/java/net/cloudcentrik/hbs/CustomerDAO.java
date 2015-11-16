@@ -13,16 +13,16 @@ interface CustomerDAO {
 	@SqlQuery("select * from hbs_customer")
 	List<Customer> getAll();
 
-	@SqlQuery("select * from hbs_customer where customer_user_id = :id")
-	Customer findById(@Bind("id") int id);
+	@SqlQuery("select * from hbs_customer where customer_email = :email")
+	Customer findByEmail(@Bind("customerEmail") String email);
 
-	@SqlUpdate("delete from hbs_customer where customer_user_id = :id")
-	int deleteById(@Bind("id") int id);
+	@SqlUpdate("delete from hbs_customer where customer_email = :email")
+	int deleteByEmail(@Bind("email") String email);
 
-	@SqlUpdate("update hbs_customer set customer_age = :age, customer_sex = :sex, customer_phone = :phone")
+	@SqlUpdate("update hbs_customer set customer_user_name = :customerUserName,customer_password = :customerPassword, customer_email = :customerEmail,customer_first_name = :customerFirstName,customer_last_name = :customerLastName, customer_age = :customerAge, customer_sex = :customerSex, customer_phone = :customerPhone,,customer_address = :customerAdress, customer_postcode = :customerPostCode, customer_city = :customerCity")
 	int update(@BindBean Customer customer);
 
-	@SqlUpdate("insert into hbs_customer (customer_user_id, customer_age, customer_sex, customer_phone) values (:customerId, :age, :sex, :phone)")
+	@SqlUpdate("insert into hbs_customer (customer_user_name, customer_password, customer_email,customer_first_name,customer_last_name,customer_age,customer_sex, customer_phone,customer_address,customer_postcode,customer_city) values (:customerUserName, :customerPassword, :customerEmail,:customerFirstName, :customerLastName, :customerAge, :customerSex, :customerPhone,:customerAdress, :customerPostCode, :customerCity)")
 	int insert(@BindBean Customer customer);
 
 }

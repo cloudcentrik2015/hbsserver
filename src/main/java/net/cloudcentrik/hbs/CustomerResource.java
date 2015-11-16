@@ -30,30 +30,27 @@ public class CustomerResource {
 	@GET
 	@Path("/{id}")
 	 @Produces(MediaType.APPLICATION_JSON)
-	public Customer get(@PathParam("id") Integer id) {
-		return customerDAO.findById(id);
+	public Customer get(@PathParam("email") String email) {
+		return customerDAO.findByEmail(email);
 	}
 
 	@POST
 	public Customer add(@Valid Customer customer) {
-		int newId = customerDAO.insert(customer);
-		customer.setCustomerId(newId);
+		customerDAO.insert(customer);
 		return customer;
 	}
 
 	@PUT
-	@Path("/{id}")
-	public Customer update(@PathParam("id") Integer id, @Valid Customer customer) {
-		customer.setCustomerId(id);
+	@Path("/{email}")
+	public Customer update(@PathParam("email") String email, @Valid Customer customer) {
 		customerDAO.update(customer);
 		return customer;
 	}
 
 	@DELETE
-	@Path("/{id}")
-	public int delete(@PathParam("id") Integer id) {
-		customerDAO.deleteById(id);
-		return id;
+	@Path("/{email}")
+	public int delete(@PathParam("email") String email) {
+		return customerDAO.deleteByEmail(email);
 	}
 
 }
