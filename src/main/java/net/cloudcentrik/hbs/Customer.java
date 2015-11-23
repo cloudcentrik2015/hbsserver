@@ -36,7 +36,10 @@ public class Customer {
 	
 	@JsonProperty
 	private String customerCity;
-
+	
+	public Customer(){
+		
+	}
 	public Customer(String customerUserName, String customerPassword,
 			String customerEmail, String customerFirstName,
 			String customerLastName, int customerAge, String customerSex,

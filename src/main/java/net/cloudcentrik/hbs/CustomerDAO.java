@@ -24,5 +24,9 @@ interface CustomerDAO {
 
 	@SqlUpdate("insert into hbs_customer (customer_user_name, customer_password, customer_email,customer_first_name,customer_last_name,customer_age,customer_sex, customer_phone,customer_address,customer_postcode,customer_city) values (:customerUserName, :customerPassword, :customerEmail,:customerFirstName, :customerLastName, :customerAge, :customerSex, :customerPhone,:customerAdress, :customerPostCode, :customerCity)")
 	int insert(@BindBean Customer customer);
+	
+	//select * from hbs_customer where customer_user_name= 'test' AND customer_password= 'test';
+	@SqlQuery("select * from hbs_customer where customer_user_name = :customerUserName and customer_password = :customerPassword")
+	Customer findUser(@Bind("customerUserName") String customerUserName,@Bind("customerPassword") String customerPassword);
 
 }

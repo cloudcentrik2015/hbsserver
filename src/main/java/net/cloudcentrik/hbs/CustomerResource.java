@@ -20,16 +20,16 @@ public class CustomerResource {
 	}
 
 	@GET
-    @Timed
-    @Path("/all")
-    @Produces(MediaType.APPLICATION_JSON)
+	@Timed
+	@Path("/all")
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Customer> getAll() {
 		return customerDAO.getAll();
 	}
 
 	@GET
 	@Path("/{id}")
-	 @Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Customer get(@PathParam("email") String email) {
 		return customerDAO.findByEmail(email);
 	}
@@ -42,7 +42,8 @@ public class CustomerResource {
 
 	@PUT
 	@Path("/{email}")
-	public Customer update(@PathParam("email") String email, @Valid Customer customer) {
+	public Customer update(@PathParam("email") String email,
+			@Valid Customer customer) {
 		customerDAO.update(customer);
 		return customer;
 	}
@@ -51,6 +52,20 @@ public class CustomerResource {
 	@Path("/{email}")
 	public int delete(@PathParam("email") String email) {
 		return customerDAO.deleteByEmail(email);
+	}
+	
+	@POST
+	@Path("/signup")
+	public Customer signUp(@Valid Customer customer) {
+		
+		Customer c=customerDAO.findUser(customer.getCustomerUserName(), customer.getCustomerPassword());
+		
+		if(c==null){
+			return new Customer();  
+		}else{
+			return c;
+		}
+		
 	}
 
 }

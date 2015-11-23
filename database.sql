@@ -13,7 +13,7 @@ USE hbs;
 CREATE TABLE `hbs_customer` (
   `customer_Id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_user_name` varchar(255) NOT NULL,
-  `customer_passward` varchar(255) NOT NULL,
+  `customer_password` varchar(255) NOT NULL,
   `customer_email` varchar(255) NOT NULL,
   `customer_first_name` varchar(255) DEFAULT NULL,
   `customer_last_name` varchar(255) DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `hbs_customer` (
 INSERT INTO `hbs`.`hbs_customer`
 (
 `customer_user_name`,
-`customer_passward`,
+`customer_password`,
 `customer_email`,
 `customer_first_name`,
 `customer_last_name`,
