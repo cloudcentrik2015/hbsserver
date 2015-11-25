@@ -5,6 +5,7 @@ import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
+
 import java.util.List;
 
 @RegisterMapper(UserMapper.class)
@@ -24,5 +25,11 @@ interface UserDAO {
 
 	@SqlUpdate("insert into hbs_user (user_name, user_password, user_email, user_type) values (:userName, :userPassword, :userEmail, :userType)")
 	int insert(@BindBean User user);
+
+	// select * from hbs_customer where customer_user_name= 'test' AND
+	// customer_password= 'test';
+	@SqlQuery("select * from hbs_user where user_name = :userName and user_password = :userPassword")
+	User findUser(@Bind("userName") String userName,
+			@Bind("userPassword") String userPassword);
 
 }

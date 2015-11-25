@@ -69,5 +69,19 @@ public class UserResource {
 		int id=userDAO.deleteByEmail(email);
 		return id;
 	}
+	
+	@POST
+	@Path("/signin")
+	public User signin(@Valid User user) {
+		
+		User u=userDAO.findUser(user.getUserName(), user.getUserPassword());
+		
+		if(u==null){
+			return new User();  
+		}else{
+			return u;
+		}
+		
+	}
 
 }

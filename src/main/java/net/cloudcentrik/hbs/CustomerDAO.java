@@ -27,6 +27,6 @@ interface CustomerDAO {
 	
 	//select * from hbs_customer where customer_user_name= 'test' AND customer_password= 'test';
 	@SqlQuery("select * from hbs_customer where customer_user_name = :customerUserName and customer_password = :customerPassword")
-	Customer findUser(@Bind("customerUserName") String customerUserName,@Bind("customerPassword") String customerPassword);
+	Customer findCustomer(@Bind("customerUserName") String customerUserName,@Bind("customerPassword") String customerPassword);
 
 }

@@ -55,10 +55,10 @@ public class CustomerResource {
 	}
 	
 	@POST
-	@Path("/signup")
-	public Customer signUp(@Valid Customer customer) {
+	@Path("/signin")
+	public Customer signin(@Valid Customer customer) {
 		
-		Customer c=customerDAO.findUser(customer.getCustomerUserName(), customer.getCustomerPassword());
+		Customer c=customerDAO.findCustomer(customer.getCustomerUserName(), customer.getCustomerPassword());
 		
 		if(c==null){
 			return new Customer();  
