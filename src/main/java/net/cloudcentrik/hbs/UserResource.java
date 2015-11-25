@@ -77,7 +77,7 @@ public class UserResource {
 		User u=userDAO.findUser(user.getUserName(), user.getUserPassword());
 		
 		if(u==null){
-			return new User();  
+			return new User("","","","");  
 		}else{
 			return u;
 		}
