@@ -21,11 +21,18 @@ public class HBSServerApp extends Application<HBSServerConfig> {
         
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(env, config.getDataSourceFactory(), "mysql");
+        
+        //User resource
         final UserDAO dao = jdbi.onDemand(UserDAO.class);
         env.jersey().register(new UserResource(dao));
         
+        //customer resource
         final CustomerDAO customerDao = jdbi.onDemand(CustomerDAO.class);
         env.jersey().register(new CustomerResource(customerDao));
+        
+        //shop resource
+        final ShopDAO shopDao = jdbi.onDemand(ShopDAO.class);
+        env.jersey().register(new ShopResource(shopDao));
         
         final HBSService hbsService=new HBSService();
         env.jersey().register(hbsService);
