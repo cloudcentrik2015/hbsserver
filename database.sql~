@@ -13,7 +13,7 @@ USE hbs;
 CREATE TABLE `hbs_customer` (
   `customer_Id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_user_name` varchar(255) NOT NULL,
-  `customer_passward` varchar(255) NOT NULL,
+  `customer_password` varchar(255) NOT NULL,
   `customer_email` varchar(255) NOT NULL,
   `customer_first_name` varchar(255) DEFAULT NULL,
   `customer_last_name` varchar(255) DEFAULT NULL,
@@ -133,18 +133,17 @@ CREATE TABLE `hbs_booking` (
 /* insert new booking*/
 INSERT INTO `hbs`.`hbs_booking`
 (
-`shop_id`,
-`customer_id`,
+`shop_email`,
+`customer_email`,
 `booking_date`,
 `booking_start_time`,
 `booking_end_time`)
 VALUES
-(
-1501,
-10001,
-'2015-11-07',
-'10:00:00',
-'11:00:00');
+('info@vasahairdresser.se',
+'ismail@cloudcentrik.net',
+'2015-12-12',
+'10:00',
+'11:00');
 
 /* select *from hbs_booking; */
 

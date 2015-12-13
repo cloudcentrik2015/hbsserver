@@ -115,36 +115,36 @@ VALUES
 
 CREATE TABLE `hbs_booking` (
   `booking_id` int(11) NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
+  `shop_email` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
   `booking_date` date NOT NULL,
   `booking_start_time` time NOT NULL,
   `booking_end_time` time NOT NULL,
   PRIMARY KEY (`booking_id`),
   UNIQUE KEY `booking_id_UNIQUE` (`booking_id`),
-  KEY `fk_booking_shop_id_idx` (`shop_id`),
-  KEY `fk_booking_customer_id_idx` (`customer_id`),
-  CONSTRAINT `fk_booking_shop_id` FOREIGN KEY (`shop_id`) REFERENCES `hbs_shop` (`shop_id`),
-  CONSTRAINT `fk_booking_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `hbs_customer` (`customer_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_booking_shop_id_idx` (`shop_email`),
+  KEY `fk_booking_customer_id_idx` (`customer_email`),
+  CONSTRAINT `fk_booking_customer_email` FOREIGN KEY (`customer_email`) REFERENCES `hbs_customer` (`customer_email`),
+  CONSTRAINT `fk_booking_shop_email` FOREIGN KEY (`shop_email`) REFERENCES `hbs_shop` (`shop_email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
 
 /* ALTER TABLE hbs_booking AUTO_INCREMENT=110001; */
 
 /* insert new booking*/
 INSERT INTO `hbs`.`hbs_booking`
 (
-`shop_id`,
-`customer_id`,
+`shop_email`,
+`customer_email`,
 `booking_date`,
 `booking_start_time`,
 `booking_end_time`)
 VALUES
-(
-1501,
-10001,
-'2015-11-07',
-'10:00:00',
-'11:00:00');
+('info@vasahairdresser.se',
+'ismail@cloudcentrik.net',
+'2015-12-12',
+'10:00',
+'11:00');
 
 /* select *from hbs_booking; */
 
