@@ -3,6 +3,7 @@ net/cloudcentrik/hbs/Customer.class
 net/cloudcentrik/hbs/PersonService.class
 net/cloudcentrik/hbs/Person.class
 net/cloudcentrik/hbs/HBSServerConfig.class
+net/cloudcentrik/hbs/Booking.class
 net/cloudcentrik/hbs/ShopResource.class
 net/cloudcentrik/hbs/HBSServerApp.class
 net/cloudcentrik/hbs/CustomerResource.class
@@ -11,10 +12,13 @@ net/cloudcentrik/hbs/ShopMapper.class
 net/cloudcentrik/hbs/UserMapper.class
 net/cloudcentrik/hbs/ShopDAO.class
 net/cloudcentrik/hbs/UserDAO.class
+net/cloudcentrik/hbs/BookingMapper.class
 net/cloudcentrik/hbs/CustomerMapper.class
 net/cloudcentrik/hbs/CustomerDAO.class
 net/cloudcentrik/hbs/User.class
 net/cloudcentrik/hbs/Shop.class
 net/cloudcentrik/hbs/HBSServerCheck.class
+net/cloudcentrik/hbs/BookingResource.class
 net/cloudcentrik/hbs/HBSService.class
 net/cloudcentrik/hbs/UserResource.class
+net/cloudcentrik/hbs/BookingDAO.class

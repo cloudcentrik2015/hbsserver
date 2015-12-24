@@ -53,7 +53,7 @@ public class UserResource {
 
 	@PUT
 	@Path("/{email}")
-	public User update(@PathParam("userEmail") String email, @Valid User user) {
+	public User update(@PathParam("email") String email, @Valid User user) {
 		user.setUserEmail(email);
 		int id=userDAO.update(user);
 		if (id > 0) {

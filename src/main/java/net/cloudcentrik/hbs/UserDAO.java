@@ -18,7 +18,7 @@ interface UserDAO {
 	User findByEmail(@Bind("email") String email);
 
 	@SqlUpdate("delete from hbs_user where user_email = :email")
-	int deleteByEmail(@Bind("userEmail") String email);
+	int deleteByEmail(@Bind("email") String email);
 
 	@SqlUpdate("update hbs_user set user_name = :userName, user_password = :userPassword, user_type = :userType where user_email = :userEmail")
 	int update(@BindBean User user);

@@ -1,6 +1,10 @@
+/home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/Booking.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/PersonDB.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/Customer.java
+/home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/BookingResource.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/PersonService.java
+/home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/BookingMapper.java
+/home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/BookingDAO.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/UserDAO.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/UserMapper.java
 /home/ismail/my_project/maven/hbs_server/src/main/java/net/cloudcentrik/hbs/HBSServerApp.java
